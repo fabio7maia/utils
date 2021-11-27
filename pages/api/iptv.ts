@@ -19,7 +19,7 @@ export default async function handler(
 
   const $ = cheerio.load(html);
 
-  const nodes = $(
+  const nodes: any = $(
     "div[class=box-info3] > div[class=lower-box] > button[data-clipboard-text*=http]"
   );
 
@@ -28,19 +28,19 @@ export default async function handler(
   for (let node of nodes) {
     url = $(node).attr("data-clipboard-text");
 
-    if (url?.indexOf("http") >= 0 && url?.indexOf("username") > 0) {
+    if (url && url.indexOf("http") >= 0 && url.indexOf("username") > 0) {
       break;
     }
   }
 
   url = url || "";
 
-  const urlParams = new URL(url).searchParams;
+  //   const urlParams = new URL(url).searchParams;
 
-  const username = urlParams.get("username") || "";
-  const password = urlParams.get("password") || "";
-  const type = urlParams.get("type") || "";
-  const output = urlParams.get("output") || "";
+  //   const username = urlParams.get("username") || "";
+  //   const password = urlParams.get("password") || "";
+  //   const type = urlParams.get("type") || "";
+  //   const output = urlParams.get("output") || "";
 
   //   const iptvChannels = await fetch(url);
 
