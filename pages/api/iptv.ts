@@ -44,7 +44,7 @@ export default async function handler(
 
   //   const iptvChannels = await fetch(url);
 
-  //   console.log(iptvChannels);
+  console.log("api/iptv response", { url });
 
   //   res.status(200).json({ url, username, password, type, output });
 
