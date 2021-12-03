@@ -14,7 +14,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  const itpvResponse = await fetch("https://test.alltvfans.com/product4.html");
+  const itpvResponse = await fetch("https://test.alltvfans.com/livego.html");
   const html = await itpvResponse.text();
 
   const $ = cheerio.load(html);
